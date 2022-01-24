@@ -1,0 +1,88 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hpffp
+version:        0.1.0.0
+description:    See README.md
+homepage:       https://github.com/thadeudepaula/haskell-exercises#readme
+bug-reports:    https://github.com/thadeudepaula/haskell-exercises/issues
+author:         Thadeu de Paula
+maintainer:     thadeudepaula@gmail.com
+copyright:      2022 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    data/dict.txt
+
+source-repository head
+  type: git
+  location: https://github.com/thadeudepaula/haskell-exercises
+
+library
+  exposed-modules:
+      Chap09
+      Chap10
+      Chap11
+      Chap12
+      Cipher
+      Phone
+      Unfold
+  other-modules:
+      Paths_hpffp
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , random
+    , split
+    , time
+  default-language: Haskell2010
+
+executable hpffp-chipher
+  main-is: Main.hs
+  other-modules:
+      Paths_hpffp
+  hs-source-dirs:
+      app/Cipher
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hpffp
+    , random
+    , split
+    , time
+  default-language: Haskell2010
+
+executable hpffp-hangman
+  main-is: Main.hs
+  other-modules:
+      Paths_hpffp
+  hs-source-dirs:
+      app/Hangman
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hpffp
+    , random
+    , split
+    , time
+  default-language: Haskell2010
+
+test-suite hpffp-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hpffp
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , hpffp
+    , random
+    , split
+    , time
+  default-language: Haskell2010
