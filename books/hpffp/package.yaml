@@ -21,7 +21,7 @@ library:
   source-dirs: src
 
 executables:
-  hpffp-hangman:
+  hangman:
     main:                Main.hs
     source-dirs:         app/Hangman
     ghc-options:
@@ -31,9 +31,19 @@ executables:
     dependencies:
     - hpffp
 
-  hpffp-chipher:
+  chipher:
     main:                Main.hs
     source-dirs:         app/Cipher
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+
+  palindrome:
+    main:                Main.hs
+    source-dirs:         app/Palindrome
     ghc-options:
     - -threaded
     - -rtsopts

@@ -27,3 +27,4 @@ All the code are under books/hpffp directory
 * Chapter 13
   - [The Hangman Game](books/hpffp/app/Hangman/Main.hs)
   - [The Cipher](books/hpffp/app/Cipher/Main.hs)
+  - [Palindrome Check](books/hpffp/app/Palindrome/Main.hs)
