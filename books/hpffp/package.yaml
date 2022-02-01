@@ -16,11 +16,35 @@ dependencies:
 - time
 - random
 - split
+- containers
 
 library:
   source-dirs: src
+  dependencies:
+  - QuickCheck
+  - hspec
 
 executables:
+  chipher:
+    main:                Main.hs
+    source-dirs:         app/Cipher
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+
+  gimmeperson:
+    main:                Main.hs
+    source-dirs:         app/GimmePerson
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+
   hangman:
     main:                Main.hs
     source-dirs:         app/Hangman
@@ -31,9 +55,9 @@ executables:
     dependencies:
     - hpffp
 
-  chipher:
+  morse:
     main:                Main.hs
-    source-dirs:         app/Cipher
+    source-dirs:         app/Morse
     ghc-options:
     - -threaded
     - -rtsopts
@@ -52,12 +76,50 @@ executables:
     - hpffp
 
 tests:
-  hpffp-test:
-    main:                Spec.hs
-    source-dirs:         test
+
+  hspec:
+    main:                Main.hs
+    source-dirs:         test/Hspec
     ghc-options:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
     - hpffp
+    - hspec
+
+  quickcheck:
+    main:                Main.hs
+    source-dirs:         test/Qcheck
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+    - hspec
+    - QuickCheck
+
+  morse-test:
+    main:        Main.hs
+    source-dirs: test/MorseTest
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+    - QuickCheck
+  wordnumber-test:
+    main:        Main.hs
+    source-dirs: test/WordNumber
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+    - hspec
+    - QuickCheck
+
+# vim: foldenable foldmethod=indent
