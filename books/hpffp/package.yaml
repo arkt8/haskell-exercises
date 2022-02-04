@@ -77,7 +77,7 @@ executables:
 
 tests:
 
-  hspec:
+  test-hspec:
     main:                Main.hs
     source-dirs:         test/Hspec
     ghc-options:
@@ -88,7 +88,7 @@ tests:
     - hpffp
     - hspec
 
-  quickcheck:
+  test-quickcheck:
     main:                Main.hs
     source-dirs:         test/Qcheck
     ghc-options:
@@ -100,7 +100,7 @@ tests:
     - hspec
     - QuickCheck
 
-  morse-test:
+  test-morse:
     main:        Main.hs
     source-dirs: test/MorseTest
     ghc-options:
@@ -110,7 +110,8 @@ tests:
     dependencies:
     - hpffp
     - QuickCheck
-  wordnumber-test:
+
+  test-wordnumber:
     main:        Main.hs
     source-dirs: test/WordNumber
     ghc-options:
@@ -120,6 +121,15 @@ tests:
     dependencies:
     - hpffp
     - hspec
-    - QuickCheck
 
+  test-chap14:
+    main:        Main.hs
+    source-dirs: test/Chap14
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+    - QuickCheck
 # vim: foldenable foldmethod=indent

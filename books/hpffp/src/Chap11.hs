@@ -17,12 +17,10 @@ data Unary a = MkUnaryA a
 -- >>> :info Nullary
 -- type Nullary :: *
 -- data Nullary = MkNullaryA | MkNullaryB
---   	-- Defined at /home/thadeu/haskell/exercises/FromFirstPrinciples/chap11.hs:1:1
 
 -- >>> :info Unary
 -- type Unary :: * -> *
 -- data Unary a = MkUnaryA a | MkUnaryB a
---   	-- Defined at /home/thadeu/haskell/exercises/FromFirstPrinciples/chap11.hs:2:1
 
 data OperatingSystem = GnuLinux
                      | OpenBSD
@@ -147,8 +145,14 @@ isSubseqOf as@(a:at) (b:bt) =
 -- por ord está no intervalo das minusculas e, só então retornar o valor
 -- alterado para chr.
 capitalizeWord :: String -> String
-capitalizeWord (l:ls) = uc l : ls
-  where uc = chr . (\n -> n - 32) . ord
+capitalizeWord = foldr uc []
+  where uc a b = toUpper a : b
+-- >>> r2x = capitalizeWord . capitalizeWord
+-- >>> r4x = r2x . r2x
+-- >>> capitalizeWord "test"
+-- >>> r2x "test"
+-- "TEST"
+-- "TEST"
 
 capitalizeWords :: String -> [(String,String)]
 capitalizeWords text = [ (w, capitalizeWord w) | w <- words text ]

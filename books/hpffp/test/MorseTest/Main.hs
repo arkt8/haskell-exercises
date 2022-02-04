@@ -23,12 +23,14 @@ morseGen = elements allowedMorse
 
 -- Properties:
 -- validation of the values
-
+-- >>> :t charToMorse
+-- >>> :t morseToChar
+-- charToMorse :: Char -> Maybe Morse
+-- morseToChar :: Morse -> Maybe Char
 prop_thereAndBackAgain :: Property
 prop_thereAndBackAgain =
   forAll charGen
   (\c -> (charToMorse c >>= morseToChar) == Just c)
-
 
 
 main :: IO ()
