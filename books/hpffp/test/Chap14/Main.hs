@@ -267,15 +267,26 @@ prop_sortIdp x =
 
 -- QuickCheck Ex.14 - Gen random
 
-data Fool = Fulse | Frue deriving (Eq, Show)
+data Fool = AAA | BBB deriving (Eq, Show)
 
 foolGen :: Gen Fool
-foolGen = frequency [ (1, return Fulse),
-                      (2, return Frue ) ]
-
+foolGen = frequency [ (1, return AAA),
+                      (1, return BBB ) ]
 instance Arbitrary Fool where
   arbitrary = foolGen
-
 -- >>> x <- sample' foolGen
--- >>> take 5 x
--- [Fulse,Frue,Fulse,Frue,Frue]
+-- >>> take 10 x
+-- [AAA,BBB,AAA,BBB,AAA,AAA,BBB,AAA,BBB,AAA]
+
+data Loob = EEE | III deriving (Eq,Show)
+loobGen :: Gen Loob
+loobGen = frequency [ (1, return EEE),
+                      (2, return III) ]
+
+instance Arbitrary Loob where
+  arbitrary = loobGen
+-- >>> x <- sample' loobGen
+-- >>> take 10 x
+-- [III,EEE,III,III,III,III,EEE,EEE,III,III]
+
+
