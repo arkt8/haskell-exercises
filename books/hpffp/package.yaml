@@ -133,7 +133,7 @@ tests:
     - hpffp
     - QuickCheck
 
-  test-chap14:
+  test-monoid:
     main:        Main.hs
     source-dirs: test/Monoid
     ghc-options:
@@ -143,4 +143,5 @@ tests:
     dependencies:
     - hpffp
     - QuickCheck
+
 # vim: foldenable foldmethod=indent
