@@ -32,6 +32,8 @@ library
       Chap14_6
       Chap14_7
       Cipher
+      Madness
+      MonoidOptional
       Morse
       Phone
       Unfold
@@ -136,7 +138,7 @@ test-suite test-chap14
   other-modules:
       Paths_hpffp
   hs-source-dirs:
-      test/Chap14
+      test/Monoid
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck

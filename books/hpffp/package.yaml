@@ -132,4 +132,15 @@ tests:
     dependencies:
     - hpffp
     - QuickCheck
+
+  test-chap14:
+    main:        Main.hs
+    source-dirs: test/Monoid
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+    - QuickCheck
 # vim: foldenable foldmethod=indent
