@@ -144,4 +144,15 @@ tests:
     - hpffp
     - QuickCheck
 
+  test-monoidmaybe:
+    main:        Main.hs
+    source-dirs: test/MonoidMaybe
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hpffp
+    - QuickCheck
+
 # vim: foldenable foldmethod=indent

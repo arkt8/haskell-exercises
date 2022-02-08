@@ -41,5 +41,9 @@ All the code are under books/hpffp directory
 * Chapter 15 - Monoid, Supergroup
   - 15.10 [Execise: Optional Monoid](src/MonoidOptional.hs)
   - 15.11 [Madness, a Mad Lib](src/Madness.hs)
-  - 15.12 [Monoid properties with QuickCheck](src/MonoidAssoc.hs)
+  - 15.12
+    - [Monoid properties with QuickCheck](src/MonoidAssoc.hs)
     - [Testing QuickCheck patience with invalid Monoid](test/Monoid/Main.hs)
+    - [Maybe Another Monoid](test/MonoidMaybe/Main.hs)
+      - Example on how to create Arbitrary instance
+        with parameterized type
